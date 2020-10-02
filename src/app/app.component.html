@@ -1,0 +1,22 @@
+<form #searchForm action="">
+  <input name="search" ngModel #search="ngModel" type="text" (keyup)=filterProducts(search.value)>
+</form>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of matchedArr">
+        <td>{{product.name}} </td>
+        <td>{{product.category}} </td>
+        <td>{{product.price}} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
